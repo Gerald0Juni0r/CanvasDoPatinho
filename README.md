@@ -1,1 +1,1 @@
-# canvasTeste01
+# Desenho de um pato utilizando Canvas e JavaScript
