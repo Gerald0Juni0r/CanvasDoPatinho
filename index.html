@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Canvas de Patinho</title>
+
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px" style='border: 10px solid #000'></canvas>
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+        
+        // Fundo do quadro
+        pincel.fillStyle = "lightyellow";
+        pincel.beginPath();
+        pincel.fillRect(0, 0, 600, 400)
+
+        // Corpo do patinho
+        pincel.fillStyle = "#fcc917";
+        pincel.beginPath();       
+        pincel.arc(300, 345, 130, 0, 2 * 3.14);
+        pincel.fill();
+
+        // Asas do patinho 
+        
+        pincel.fillStyle = "#f3d863";
+        pincel.beginPath();
+        pincel.arc(423.9, 322, 30, 0, 2 * 3.14); // asa direita (cima) 
+        pincel.arc(424.1, 338, 30, 0, 2 * 3.14); // asa direita (meio)       
+        pincel.arc(421.9, 350, 30, 0, 2 * 3.14); // asa direita (baixo)
+        pincel.fill(); 
+        pincel.beginPath();
+        pincel.arc(170.9, 322, 30, 0, 2 * 3.14); // asa esquerda (cima)
+        pincel.arc(172.9, 350, 30, 0, 2 * 3.14); // asa esquerda (baixo)
+        pincel.arc(170.2, 338, 30, 0, 2 * 3.14); // asa esquerda (meio)
+        pincel.fill();
+
+        // Cabelos do patinho
+        pincel.fillStyle = "#f7d417";
+        pincel.beginPath();
+        pincel.moveTo(300, 60);
+        pincel.lineTo(310, 100);
+        pincel.lineTo(290, 100);
+        pincel.fill(); // fio do meio
+        pincel.moveTo(350, 90);
+        pincel.lineTo(300, 150);
+        pincel.lineTo(300, 100);
+        pincel.fill(); // fio do direita
+        pincel.moveTo(250, 90);
+        pincel.lineTo(300, 150);
+        pincel.lineTo(300, 100);
+        pincel.fill(); // fio do esquerda
+
+        // A cabeça do patinho
+        pincel.fillStyle = "#f7d117";
+        pincel.beginPath();
+        pincel.arc(300, 200, 100, 0, 2 * 3.14);
+        pincel.fill();
+
+        // O bico do patinho
+        pincel.fillStyle = "orange";
+        pincel.beginPath();
+        pincel.arc(320, 225, 13, 0, 2 * 3.14); // direito cima
+        pincel.arc(330, 230, 13, 0, 2 * 3.14); // direito meio
+        pincel.arc(320, 236, 13, 0, 2 * 3.14); // direito baixo        
+        pincel.arc(300, 230, 29, 0, 2 * 3.14); // meio
+        pincel.arc(280, 235, 13, 0, 2 * 3.14); // esquerdo baixo
+        pincel.arc(270, 230, 13, 0, 2 * 3.14); // esquerdo meio
+        pincel.arc(280, 225, 13, 0, 2 * 3.14); // esquerdo cima
+        pincel.fill();
+        
+        // Os olhos do patinho
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.arc(250, 175, 8, 0, 2 * 3.14); // olho esquerdo
+        pincel.arc(350, 175, 8, 0, 2 * 3.14); // olho direito
+        pincel.fill();
+        pincel.fillStyle = "white";
+        pincel.beginPath();
+        pincel.arc(248, 173, 2.5, 0, 2 * 3.14); // olho esquerdo
+        pincel.arc(352, 173, 2.5, 0, 2 * 3.14); // olho direito
+        pincel.fill();
+
+
+    </script>
+</body>
+</html>
